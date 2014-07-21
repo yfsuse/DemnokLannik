@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Send Req</title>
+</head>
+
+<style>
+textarea {
+resize: none;
+}
+
+</style>
+<body>
+    <form action="/result" method="post">
+    <textarea cols="200" rows="10" id="settings" name="settings">Settings</textarea>
+        <br/>
+    <input type="submit" value="Send Req" />
+    <select name="methodtype">
+        <option value="offline">offline</option>
+        <option value="online">online</option>
+    </select>
+    </form>
+</body>
+</html>

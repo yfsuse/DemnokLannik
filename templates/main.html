@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form action="" method="post">
+
+    <p><textarea id="param" name="param" rows="5" cols="140" style="resize:none">{{ input }}</textarea></p>
+
+    <input type="text" name="key" value="{{ key }}"/>
+
+
+    <select name="methodtype">
+        <option value="encode">encode</option>
+        <option value="decode">decode</option>
+    </select>
+
+
+    <input type="submit" value="Submit" />
+
+</form>
+<br>
+<p><textarea rows="5" cols="140" style="resize:none" readonly="readonly">{{ output }}</textarea></p>
+
+
+</body>
+</html>

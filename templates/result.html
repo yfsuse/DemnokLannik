@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Data</title>
+</head>
+<body>
+<p>return {{ num }} records</p>
+<table border="1">
+    {% for datas in request_data %}
+        <tr>
+            {% for data in datas %}
+                <td>{{ data }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
