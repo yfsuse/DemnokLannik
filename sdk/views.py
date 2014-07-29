@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+# coding=utf-8
+
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 import os
@@ -41,13 +44,16 @@ def show(request):
     except ValueError:
         return HttpResponse('settings is not json')
 
-    offline = 'http://172.20.0.69:8080/realquery/report?'
-    online = 'http://resin-yeahmobi-214401877.us-east-1.elb.amazonaws.com:18080/report/report?'
+    yeahmobi_offline = 'http://172.20.0.69:8080/realquery/report?'
+    yeahmobi_online = 'http://resin-yeahmobi-214401877.us-east-1.elb.amazonaws.com:18080/report/report?'
+    trading_online = 'http://resin-track-1705388256.us-east-1.elb.amazonaws.com:18080/report/report?'
 
-    if method == 'offline':
-        url = offline
+    if method == 'yeahmobi_offline':
+        url = yeahmobi_offline
+    elif method == 'yeahmobi_online':
+        url = yeahmobi_online
     else:
-        url = online
+        url = trading_online
 
     postdata = urllib.urlencode({'report_param': receive})
 
