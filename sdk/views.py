@@ -3,6 +3,8 @@
 
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from forms import YeahTestForm
+from sdk.models import LogParser
 import os
 import urllib
 import json
@@ -10,7 +12,7 @@ import  urllib2
 # Create your views here.
 
 
-def parser(request):
+def dencrypt(request):
 
     postdata = request.POST
     if postdata.get('param', None) is None or postdata.get('key', None) is None:
@@ -32,10 +34,10 @@ def parser(request):
                                             'input': param,
                                             'key': key})
 
-def send_req(request):
+def show_report(request):
     return render_to_response('sendreq.html')
 
-def show(request):
+def get_report_data(request):
     receive = request.POST.get('settings', 'no value')
     method = request.POST.get('methodtype')
 
@@ -67,3 +69,23 @@ def show(request):
         pass
     num = len(rspdata) - 1
     return render_to_response('result.html', {'num':num, 'request_data':rspdata})
+
+def index(request):
+    return render_to_response('index.html')
+
+def logparser(request):
+    if request.method == "POST":
+        ytf = YeahTestForm(request.POST,request.FILES)
+        if ytf.is_valid():
+            #获取表单信息
+            keywords = ytf.cleaned_data['keywords']
+            filepath = ytf.cleaned_data['filepath']
+            #写入数据库
+            lp = LogParser()
+            lp.keywords = keywords
+            lp.filepath = filepath
+            lp.save()
+            return HttpResponse('upload ok!')
+    else:
+        ytf = YeahTestForm()
+    return render_to_response('upload.html',{'ytf':ytf})

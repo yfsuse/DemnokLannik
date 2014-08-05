@@ -4,9 +4,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^main$', parser),
-    url(r'^req', send_req),
-    url(r'^result$', show),
+    url(r'^index$', index),
+    url(r'^dencrypt$', dencrypt),
+    url(r'^druidreport', show_report),
+    url(r'^result$', get_report_data),
+    url(r'^logparser$', logparser),
     # Examples:
     # url(r'^$', 'gamelala.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
