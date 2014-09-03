@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^dencrypt$', dencrypt),
     url(r'^druidreport', show_report),
     url(r'^result$', get_report_data),
-    url(r'^logparser$', logparser),
+    url(r'^autoreport', autoreport),
     # Examples:
     # url(r'^$', 'gamelala.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),

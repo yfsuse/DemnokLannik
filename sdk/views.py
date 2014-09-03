@@ -7,6 +7,7 @@ from forms import YeahTestForm
 from sdk.models import LogParser
 import os
 import urllib
+import time
 import json
 import  urllib2
 # Create your views here.
@@ -46,46 +47,40 @@ def get_report_data(request):
     except ValueError:
         return HttpResponse('settings is not json')
 
-    yeahmobi_offline = 'http://172.20.0.69:8080/realquery/report?'
-    yeahmobi_online = 'http://resin-yeahmobi-214401877.us-east-1.elb.amazonaws.com:18080/report/report?'
+    druid_offline = 'http://172.20.0.69:8080/realquery/report?'
+    druid_online = 'http://resin-yeahmobi-214401877.us-east-1.elb.amazonaws.com:18080/report/report?'
+    mysql_online = 'http://report.yeahmobi.com/report?'
     trading_online = 'http://resin-track-1705388256.us-east-1.elb.amazonaws.com:18080/report/report?'
+    trading_offline = 'http://172.20.0.70:8080/track/report?'
 
-    if method == 'yeahmobi_offline':
-        url = yeahmobi_offline
-    elif method == 'yeahmobi_online':
-        url = yeahmobi_online
-    else:
+    if method == 'druid_offline':
+        url = druid_offline
+    elif method == 'druid_online':
+        url = druid_online
+    elif method == 'mysql_online':
+        url = mysql_online
+    elif method == 'trading_online':
         url = trading_online
+    else:
+        url = trading_offline
 
     postdata = urllib.urlencode({'report_param': receive})
 
+    begin = time.time()
     rsp = urllib2.build_opener().open(urllib2.Request(url, postdata)).read()
+    spend = time.time() - begin
 
     try:
         rspdata = json.loads(rsp)['data']['data']
     except KeyError, e:
-        return HttpResponse('No Data Found')
+        return HttpResponse(rsp)
     else:
         pass
     num = len(rspdata) - 1
-    return render_to_response('result.html', {'num':num, 'request_data':rspdata})
+    return render_to_response('result.html', {'num':num, 'spend':spend ,'request_data':rspdata})
 
 def index(request):
     return render_to_response('index.html')
 
-def logparser(request):
-    if request.method == "POST":
-        ytf = YeahTestForm(request.POST,request.FILES)
-        if ytf.is_valid():
-            #获取表单信息
-            keywords = ytf.cleaned_data['keywords']
-            filepath = ytf.cleaned_data['filepath']
-            #写入数据库
-            lp = LogParser()
-            lp.keywords = keywords
-            lp.filepath = filepath
-            lp.save()
-            return HttpResponse('upload ok!')
-    else:
-        ytf = YeahTestForm()
-    return render_to_response('upload.html',{'ytf':ytf})
+def autoreport(request):
+    return render_to_response('autoreport.html')

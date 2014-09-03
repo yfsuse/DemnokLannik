@@ -8,9 +8,18 @@
 <body>
 {#<h1>TraceConv LogParser</h1>#}
 <br>
-<form method="post" enctype="multipart/form-data" >
-{{ytf.as_p}}
-<input type="submit" value="Submit"/>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function msg(){
+if (confirm("确认提交？"))
+document.lnman.submit()
+}
+//-->
+</SCRIPT>
+<form name="lnman" method="post" action="">
+    <input type="text" name="textfield" value="测试……">
+    <input type="button" name="Submit" value="提交" onclick="msg();">
 </form>
 </body>
 </html>
