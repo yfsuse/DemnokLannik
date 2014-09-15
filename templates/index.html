@@ -1,140 +1,223 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head>
-    <title>YeahMobi Test</title>
-    <style type="text/css">
-        .all{ margin:220px auto; width:1010px; height:70px;}
-        .all .bll{width:300px; height:170px; float:left; margin-left:10px;}
-        .all .bll .list{ width:150px; height:100px; -moz-border-radius:10px;border-radius:10px;cursor:pointer;margin:0px auto; margin-top:10px;line-height:50px; text-align:center;color:White; font-weight:500; font-size:18px; font-family:@������;}
-        .divradius{ -moz-border-radius:50px;border-radius:50px;line-height:60px;}
-		
-		.all .bll .backc1:hover{ -moz-border-radius:50px;border-radius:50px;}
-		
-		.all .bll .backc6:hover{ -moz-border-radius:50px;border-radius:50px;}
-		
-		.all .bll .backc7:hover{-moz-box-shadow: 5px 5px 5px #888888;box-shadow: 5px 5px 5px #888888;}
-		
-		.all .bll .backc8
-		{
-            transition:width 1s, height 1s;
-            -moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
-            -webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
-            -o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
-		}
-		.all .bll .backc8:hover
-		{
-            transform:rotateY(360deg);
-            -moz-transform:rotateY(360deg); /* Firefox 4 */
-            -webkit-transform:rotateY(360deg); /* Safari and Chrome */
-            -o-transform:rotateY(360deg); /* Opera */
-		}
-		
-		.all .bll .backc9
-		{
-            transition:width 1s, height 1s;
-            -moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
-            -webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
-            -o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
-		}
-		.all .bll .backc9:hover
-		{
-            transform:rotateX(360deg);
-            -moz-transform:rotateX(360deg); /* Firefox 4 */
-            -webkit-transform:rotateX(360deg); /* Safari and Chrome */
-            -o-transform:rotateX(360deg); /* Opera */
-		}
-		
-		.all .bll .backc10
-		{
-            transition:width 0.5s, height 0.5s;
-            -moz-transition:width 0.5s, height 0.5s, -moz-transform 0.5s; /* Firefox 4 */
-            -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s; /* Safari and Chrome */
-            -o-transition:width 0.5s, height 0.5s, -o-transform 0.5s; /* Opera */
-		}
-		.all .bll .backc10:hover
-		{
-            transform:rotate(45deg);
-            -moz-transform:rotate(45deg); /* Firefox 4 */
-            -webkit-transform:rotate(45deg); /* Safari and Chrome */
-            -o-transform:rotate(45deg); /* Opera */
-		}
-		
-		.all .bll .backc11
-		{
-            transition:width 0.5s, height 0.5s;
-            -moz-transition:width 0.5s, height 0.5s, -moz-transform 0.5s; /* Firefox 4 */
-            -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s; /* Safari and Chrome */
-            -o-transition:width 0.5s, height 0.5s, -o-transform 0.5s; /* Opera */
-		}
-		.all .bll .backc11:hover
-		{
-		    width:60px;
-            height:60px;
-            line-height:60px;
-            margin-top:5px;
-            transform:rotate(360deg);
-            -moz-transform:rotate(360deg); /* Firefox 4 */
-            -webkit-transform:rotate(360deg); /* Safari and Chrome */
-            -o-transform:rotate(360deg); /* Opera */
-		}
-		
-		.all .bll a{text-decoration:none;}
-        .backc1{ background-color:#66cccc;}
-		.backc2{ background-color:#cc6633;}
-		.backc3{ background-color:#999933;}
-		.backc4{ background-color:#669933;}
-		.backc5{ background-color:#cc9933;}
-		.backc6{ background-color:#cc6666;}
-		.backc7{ background-color:#336666;}
-		.backc8{ background-color:#cc6633;}
-		.backc9{ background-color:#5B5B00;}
-		.backc10{ background-color:#ff9966;}
-		.backc11{ background-color:#669999;}
-    </style>
-    <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $(".backc2").mouseover(function () {
-                $(this).animate({ marginTop: "5px" }, 200);
-            });
-            $(".backc2").mouseleave(function () {
-                $(this).animate({ marginTop: "10px" }, 200);
-            });
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>YeahMobi 测试工具集</title>
+		<link rel="stylesheet" href="../static/css/style.css" type="text/css" media="screen" charset="utf-8" />
+		<script src="../static/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/modal.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+    <SCRIPT LANGUAGE="JavaScript">
+<!--
+function showmsg(){
+if (confirm("确认提交？"))
+document.lnman.submit()
+}
+//-->
+    </SCRIPT>
+	<body>
+		<div id="header">
+			<div class="col w5 bottomlast">
+				<a href="" class="logo">
+					<img src="../static/images/logo.png" alt="Logo" />
+				</a>
+			</div>
+			<div class="col w5 last right bottomlast">
+				<p class="last">Logged in as <span class="strong">Admin,</span> <a href="">Logout</a></p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="wrapper">
+			<div id="minwidth">
+				<div id="holder">
+					<div id="menu">
+						<div id="left"></div>
+						<div id="right"></div>
+						<ul>
+							<li>
+								<a href="index.html" class="selected"><span>自动化配置</span></a>
+							</li>
+							<li>
+								<a href="users.html"><span>用户</span></a>
+							</li>
+							<li>
+								<a href="articles.html"><span>运行结果查询</span></a>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div id="submenu">
+						<div class="modules_left">
+							<div class="module buttons">
+								<a href="" class="dropdown_button"><small class="icon clipboard"></small><span>YeahMobi</span></a>
+								<div class="dropdown help_index">
+									<div class="arrow"></div>
+									<div class="content">
+										<div class="col w5">
+										<a href="#dbconfig">
+											数据库配置
+											<span>配置自动化测试运行过程中所需用到的Mongodb数据库信息，包括数据库地址，端口，数据库名称以及表名</span>
+										</a>
+										<hr/>
+										<a href="#queryconfig">
+											查询条件配置
+											<span>配置查询条件中的查询开始时间，结束时间</span>
+										</a>
+										<hr/>
+										<a href="#functionconfig">
+											自动化功能配置
+											<span>选择所需自动化运行的功能</span>
+										</a>
+										<hr/>
 
-            $(".backc3").mouseover(function () {
-                $(this).animate({ marginTop: "5px" }, 200);
-                $(this).animate({ marginTop: "10px" }, 200);
-            });
+										<a href="#envconfig">
+											环境配置
+											<span>选择自动化运行的环境</span>
+										</a>
+										<hr/>
 
-            $(".backc4").mouseover(function () {
-                $(this).fadeTo(300, 0.3);
-            });
-            $(".backc4").mouseleave(function () {
-                $(this).fadeTo(300, 1);
-            });
+										</div>
+										<div class="clear"></div>
+										<a class="button red right close"><small class="icon cross"></small><span>Close</span></a>
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-            $(".backc5").mouseover(function () {
-                $(this).fadeTo(400, 0.3);
-                $(this).fadeTo(400, 1);
-            });
+						<div class="title">
+							YeahMobi配置
+						</div>
+						<div class="modules_right">
+						</div>
+					</div>
+					<form name="config" method="post" action="/runner">
+					<div id="desc">
+						<div class="body">
 
-            $(".backc6").mouseover(function () {
-                $(this).addClass("divradius").fadeTo(300, 0.3);
-            });
-            $(".backc6").mouseleave(function () {
-                $(this).removeClass("divradius").fadeTo(300, 1);
-            });
-        });
-    </script>
-</head>
-<body>
-    <h2>YeahMobi Test</h2>
-    <div class="all">
-        <div class="bll"><a href="/dencrypt"><div class="list backc1"><b>GameLaLa Dencrypt</b></div></a></div>
-        <div class="bll"><a href="/druidreport"><div class="list backc10"><b>YeahMobi Report</b></div></a></div>
-        <div class="bll"><a href="/autoreport"><div class="list backc8"><b>Druid Report</b></div></a></div>
-	</div>
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-</div>
-</body>
+							<div id="messages"></div>
+							<div class="clear"></div>
+
+
+							<div id="dbconfig" class="help">
+							    <h1> 数据库配置:</h1>
+							    <div class="col w10 last">
+								<div class="content">
+									<p>Mongodb数据库信息，包括数据库地址，端口，数据库名称以及表名:</p>
+									<table>
+									        <tr>
+            									<td>Mongodb数据库的IP</td>
+            									<td><input type="text" name="textfield" value="127.0.0.1" onfocus="if(this.value=='127.0.0.1'){this.value=''}" onblur="if (value=='') {value='127.0.0.1'}"><br></td>
+        									</tr>
+
+        									<tr>
+            									<td>Mongodb数据库的端口</td>
+            									<td><input type="text" name="textfield" value="27017" onfocus="if(this.value=='27017'){this.value=''}" onblur="if (value=='') {value='27017'}"><br></td>
+        									</tr>
+
+        									<tr>
+            									<td>Mongodb数据库实例名</td>
+            									<td><input type="text" name="textfield" value="mercurial" disabled><br></td>
+        									</tr>
+
+        									<tr>
+            									<td>Mongodb数据库集合名</td>
+            									<td><input type="text" name="textfield" value="mercurial_tmp" disabled><br></td>
+        									</tr>
+        							</table>
+								</div>
+							    </div>
+							    <div class="clear"></div>
+							</div>
+
+
+							<div id="queryconfig" class="help">
+							    <h1>查询条件配置:</h1>
+							    <div class="col w10 last">
+								<div class="content">
+									<p>配置查询条件中的查询开始时间，结束时间:</p>
+									<table>
+										        <tr>
+            										<td>查询条件的开始日期</td>
+            										<td><input type="text" name="textfield" value="2014-7-1 08:00:00" onfocus="if(this.value=='2014-7-1 08:00:00'){this.value=''}" onblur="if (value=='') {value='2014-7-1 08:00:00'}"><br></td>
+        										</tr>
+        										<tr>
+            										<td>查询条件的结束日期</td>
+            										<td><input type="text" name="textfield" value="2014-8-1 08:00:00" onfocus="if(this.value=='2014-8-1 08:00:00'){this.value=''}" onblur="if (value=='') {value='2014-8-1 08:00:00'}"><br></td>
+        										</tr>
+									</table>
+								</div>
+							    </div>
+							    <div class="clear"></div>
+							</div>
+
+
+							<div id="functionconfig" class="help">
+							    <h1>自动化功能配置:</h1>
+							    <div class="col w10 last">
+								<div class="content">
+									<p>选择所需自动化运行的功能:</p>
+									<table>
+        								<tr>
+            								<td>选择所要运行的功能</td>
+           							 		<td>
+                								<label><input name="Fruit" type="checkbox" value="" />过滤筛选功能 </label> 
+                								<label><input name="Fruit" type="checkbox" value="" />分页排序功能 </label> 
+                								<label><input name="Fruit" type="checkbox" value="" />TOPN功能</label> 
+                								<label><input name="Fruit" type="checkbox" value="" />通用查询功能</label>
+                								<label><input name="Fruit" type="checkbox" value="" />货币转换功能</label>
+            								</td>
+        								</tr>
+									</table>
+								</div>
+							    </div>
+							    <div class="clear"></div>
+							</div>
+
+
+							<div id="envconfig" class="help">
+							    <h1>环境配置:</h1>
+							    <div class="col w10 last">
+								<div class="content">
+									<p>选择自动化运行的环境:</p>
+									<table>
+										        <tr>
+            										<td>测试环境选择</td>
+            										<td>
+                    								<select name="selectEnv" id="selectEnv">   
+                    								<option value="online">YeahMobi线上生产环境</option>   
+                    								<option value="offline">YeahMobi线下测试环境</option>
+                   									</select> 
+            										</td>
+        										</tr>
+									</table>
+                                    <table>
+                                                <tr>
+                                                    <td align="center"><input type="button" name="Submit" value="Save Config" onclick="showmsg();"></td>
+                                                </tr>
+                                    </table>
+								</div>
+							    </div>
+						        <div class="clear"></div>
+                            </div>
+
+						<div id="body_footer">
+							<div id="bottom_left"><div id="bottom_right"></div></div>
+						</div>
+
+					</div>
+				</div>
+                    </form>
+                </div>
+			</div>
+        </div>
+		</div>
+		<div id="footer">
+			<p class="last">Copyright 2009 - Gray Admin Template - Created by <a href="">Passatgt</a></p>
+		</div>
+	</body>
 </html>

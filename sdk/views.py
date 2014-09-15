@@ -82,5 +82,8 @@ def get_report_data(request):
 def index(request):
     return render_to_response('index.html')
 
+def login(request):
+    return render_to_response('login.html')
+
 def autoreport(request):
     return render_to_response('autoreport.html')
