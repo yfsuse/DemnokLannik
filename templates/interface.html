@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Druid Report Automation</title>
+</head>
+<body>
+<br>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function showmsg(){
+if (confirm("确认提交？"))
+document.lnman.submit()
+}
+//-->
+</SCRIPT>
+<form name="lnman" method="post" action="">
+    <table>
+        <tr>
+            <td>Mongodb数据库的IP</td>
+            <td><input type="text" name="textfield" value="127.0.0.1" onfocus="if(this.value=='127.0.0.1'){this.value=''}" onblur="if (value=='') {value='127.0.0.1'}"><br></td>
+        </tr>
+
+        <tr>
+            <td>Mongodb数据库的端口</td>
+            <td><input type="text" name="textfield" value="27017" onfocus="if(this.value=='27017'){this.value=''}" onblur="if (value=='') {value='27017'}"><br></td>
+        </tr>
+
+
+        <tr>
+            <td>查询条件的开始日期</td>
+            <td><input type="text" name="textfield" value="2014-7-1 08:00:00" onfocus="if(this.value=='2014-7-1 08:00:00'){this.value=''}" onblur="if (value=='') {value='2014-7-1 08:00:00'}"><br></td>
+        </tr>
+        <tr>
+            <td>查询条件的结束日期</td>
+            <td><input type="text" name="textfield" value="2014-8-1 08:00:00" onfocus="if(this.value=='2014-8-1 08:00:00'){this.value=''}" onblur="if (value=='') {value='2014-8-1 08:00:00'}"><br></td>
+        </tr>
+
+
+        <tr>
+            <td>测试环境选择</td>
+            <td>
+                    <select name="selectEnv" id="selectEnv">   
+                    <option value="online">YeahMobi线上生产环境</option>   
+                    <option value="offline">YeahMobi线下测试环境</option>
+                    </select> 
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td>选择所要运行的功能</td>
+            <td>
+                <label><input name="Fruit" type="checkbox" value="" />过滤筛选功能 </label> 
+                <label><input name="Fruit" type="checkbox" value="" />分页排序功能 </label> 
+                <label><input name="Fruit" type="checkbox" value="" />TOPN功能</label> 
+                <label><input name="Fruit" type="checkbox" value="" />通用查询功能</label>
+                <label><input name="Fruit" type="checkbox" value="" />货币转换功能</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="button" name="Submit" value="提交" onclick="showmsg();"></td>
+        </tr>
+
+
+
+
+     </table>
+</form>
+</body>
+</html>
